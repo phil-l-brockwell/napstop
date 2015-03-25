@@ -1,0 +1,30 @@
+<html ng-app='NetherTest'>
+
+  <head>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller='NetherTestController'>
+
+  <input type='text' ng-model='destination'>
+  <button ng-click='sleep()'>Sleep Easy</button>
+  <h1>Current Location</h1>
+  Latitude = {{locCoords.lat}}
+  <br>
+  Longitude = {{locCoords.lon}}
+
+  <h1>Destination</h1>
+  Latitude = {{destCoords.lat}}
+  <br>
+  Longitude = {{destCoords.lon}}
+  </body>
+
+  <h1>Distance To Your Stop</h1>
+  {{distanceBetween}}
+
+  <h1 ng-show='distanceBetween < 5'>WAKE UP YOU'RE LESS THAN 5KM FROM YOUR STOP!</h1>
+
+</html>
