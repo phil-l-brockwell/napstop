@@ -11,13 +11,6 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js">
-function documentReady() {
-   document.addEventListener("deviceready", handleDeviceReady, false);
-}
-
-function handleDeviceReady(event) {
-   //cordova api is ready for use
-}
 
     </script>
 
@@ -33,8 +26,8 @@ function handleDeviceReady(event) {
     <br>
 
     <div ng-hide='distanceBetween < 1'>
-      <div ng-hide='sleeping'>
 
+      <div ng-hide='sleeping'>
         <center>
         <i>Wake me when I'm close to...</i>
         </center>
@@ -82,11 +75,6 @@ function handleDeviceReady(event) {
   </body>
 </main>
 
-
 <footer></footer>
-
-
-
-
 
 </html>

@@ -19,15 +19,7 @@
 
 # org.apache.cordova.dialogs
 
-このプラグインは、グローバル `navigator.notification` オブジェクトを介していくつかネイティブ ダイアログの UI 要素へのアクセスを提供します。
-
-オブジェクトは、グローバル スコープの `ナビゲーター` に添付、それがないまで `deviceready` イベントの後。
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        console.log(navigator.notification);
-    }
-    
+このプラグインはいくつかのネイティブのダイアログの UI 要素へのアクセスを提供します。
 
 ## インストール
 
@@ -43,7 +35,7 @@
 
 ## navigator.notification.alert
 
-カスタムの警告またはダイアログ ボックスが表示されます。 ほとんどコルドバ ネイティブ] ダイアログ ボックスの使用この機能がいくつかのプラットフォームは通常小さいカスタマイズ可能なブラウザーの `警告` 機能を使用します。
+カスタムの警告またはダイアログ ボックスが表示されます。 ほとんどコルドバ ネイティブ] ダイアログ ボックスの使用この機能がいくつかのプラットフォームを使用して、ブラウザーの `alert` 関数は、通常より少なくカスタマイズ可能です。
 
     navigator.notification.alert(message, alertCallback, [title], [buttonName])
     
@@ -80,7 +72,6 @@
 *   Tizen
 *   Windows Phone 7 と 8
 *   Windows 8
-*   Windows
 
 ### Windows Phone 7 と 8 癖
 
@@ -93,11 +84,7 @@
 
 ### Firefox OS 互換:
 
-ネイティブ ブロック `window.alert()` と非ブロッキング `navigator.notification.alert()` があります。
-
-### ブラックベリー 10 癖
-
-`navigator.notification.alert ('text' コールバック 'title'、'text')` コールバック パラメーターは数 1 に渡されます。
+両方のネイティブ ブロック `window.alert()` ノン ブロッキングと `navigator.notification.alert()` は利用できます。
 
 ## navigator.notification.confirm
 
@@ -116,9 +103,9 @@
 
 ### confirmCallback
 
-`confirmCallback` は、いずれかの確認ダイアログ ボックスでボタンを押したときに実行します。
+`confirmCallback`の確認ダイアログ ボックスでボタンを押したときに実行されます。
 
-コールバックは、引数 `buttonIndex` *（番号）* は、押されたボタンのインデックス。 インデックスがインデックス 1 ベースので、値は `1`、`2`、`3` などに注意してください。
+コールバック引数 `buttonIndex` *（番号）*は、押されたボタンのインデックス。 メモこと、インデックスを使用して 1 ベースのインデックス化、ので、値は `1` 、 `2` 、 `3` 、等。
 
 ### 例
 
@@ -144,7 +131,6 @@
 *   Tizen
 *   Windows Phone 7 と 8
 *   Windows 8
-*   Windows
 
 ### Windows Phone 7 と 8 癖
 
@@ -155,38 +141,32 @@
 
 *   呼び出しを `alert` と `confirm` では非ブロッキング、結果は非同期的にのみ使用できます。
 
-### Windows の癖
-
-*   Windows8/8.1 の MessageDialog インスタンスを 3 つ以上のボタンを追加することはできません。
-
-*   Windows Phone 8.1 に 2 つ以上のボタンを持つダイアログを表示することはできません。
-
 ### Firefox OS 互換:
 
-ネイティブ ブロック `window.confirm()` と非ブロッキング `navigator.notification.confirm()` があります。
+両方のネイティブ ブロック `window.confirm()` ノン ブロッキングと `navigator.notification.confirm()` は利用できます。
 
 ## navigator.notification.prompt
 
-ブラウザーの `プロンプト` 機能より詳細にカスタマイズはネイティブのダイアログ ボックスが表示されます。
+ブラウザーのより詳細にカスタマイズはネイティブのダイアログ ボックスが表示されます `prompt` 関数。
 
     navigator.notification.prompt(message, promptCallback, [title], [buttonLabels], [defaultText])
     
 
-*   **message**: ダイアログ メッセージ。*(文字列)*
+*   **メッセージ**: ダイアログ メッセージ。*(文字列)*
 
 *   **promptCallback**: インデックス (1、2、または 3) を押されたボタンまたはダイアログ ボックスは、ボタンを押す （0） なしに解雇されたときに呼び出すコールバック。*(機能)*
 
-*   **title**: タイトル *(String)* (省略可能、既定 `プロンプト` ダイアログ)
+*   **タイトル**: *(文字列)* (省略可能、既定値のタイトル] ダイアログ`Prompt`)
 
-*   **buttonLabels**: ボタンのラベル *(配列)* (省略可能、既定値 `["OK"、「キャンセル」]` を指定する文字列の配列)
+*   **buttonLabels**： ボタンを指定する文字列の配列*(配列)* (省略可能、既定値のラベル`["OK","Cancel"]`)
 
-*   **defaultText**: 既定テキスト ボックスの入力値 (`文字列`) (省略可能、既定: 空の文字列)
+*   **これら**: 既定テキスト ボックスの入力値 ( `String` ) (省略可能、既定: 空の文字列)
 
 ### promptCallback
 
-`promptCallback` は、プロンプト ダイアログ ボックス内のボタンのいずれかを押したときに実行します。コールバックに渡される `results` オブジェクトには、次のプロパティが含まれています。
+`promptCallback`プロンプト ダイアログ ボックス内のボタンのいずれかを押したときに実行されます。`results`コールバックに渡されるオブジェクトに、次のプロパティが含まれています。
 
-*   **buttonIndex**: 押されたボタンのインデックス。*(数)*インデックスがインデックス 1 ベースので、値は `1`、`2`、`3` などに注意してください。
+*   **buttonIndex**: 押されたボタンのインデックス。*(数)*メモこと、インデックスを使用して 1 ベースのインデックス化、ので、値は `1` 、 `2` 、 `3` 、等。
 
 *   **input1**: プロンプト ダイアログ ボックスに入力したテキスト。*(文字列)*
 
@@ -212,8 +192,6 @@
 *   Firefox の OS
 *   iOS
 *   Windows Phone 7 と 8
-*   Windows 8
-*   Windows
 
 ### Android の癖
 
@@ -221,13 +199,9 @@
 
 *   アンドロイド 3.0 と後、ホロのテーマを使用するデバイスを逆の順序でボタンが表示されます。
 
-### Windows の癖
-
-*   Windows プロンプト ダイアログは html ベースのようなネイティブ api の不足のためです。
-
 ### Firefox OS 互換:
 
-ネイティブ ブロック `window.prompt()` と非ブロッキング `navigator.notification.prompt()` があります。
+両方のネイティブ ブロック `window.prompt()` ノン ブロッキングと `navigator.notification.prompt()` は利用できます。
 
 ## navigator.notification.beep
 
@@ -236,7 +210,7 @@
     navigator.notification.beep(times);
     
 
-*   **times**: ビープ音を繰り返す回数。*(数)*
+*   **回**: ビープ音を繰り返す回数。*(数)*
 
 ### 例
 
@@ -256,11 +230,11 @@
 
 ### アマゾン火 OS 癖
 
-*   アマゾン火 OS デフォルト **設定/表示 ＆ サウンド** パネルの下に指定した **通知音** を果たしています。
+*   アマゾン火 OS デフォルト**設定/表示 ＆ サウンド**パネルの下に指定した**通知音**を果たしています。
 
 ### Android の癖
 
-*   アンドロイド デフォルト **通知着信音** **設定/サウンド ＆ ディスプレイ** パネルの下に指定を果たしています。
+*   アンドロイド デフォルト**通知着信音****設定/サウンド ＆ ディスプレイ**パネルの下に指定を果たしています。
 
 ### Windows Phone 7 と 8 癖
 
@@ -270,4 +244,4 @@
 
 *   Tizen は、メディア API 経由でオーディオ ファイルを再生してビープ音を実装します。
 
-*   ビープ音ファイル短い、`sounds` アプリケーションのルート ディレクトリのサブディレクトリである必要があり。、`beep.wav` という名前である必要があります。.
+*   ビープ音ファイルする必要があります短いである必要があります、 `sounds` 、アプリケーションのルート ディレクトリのサブディレクトリと命名する必要があります`beep.wav`.
