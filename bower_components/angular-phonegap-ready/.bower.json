@@ -1,0 +1,18 @@
+{
+  "name": "angular-phonegap-ready",
+  "version": "0.0.1",
+  "main": "ready.js",
+  "dependencies": {
+    "angular": "~1.0.5"
+  },
+  "homepage": "https://github.com/btford/angular-phonegap-ready",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "373e2b663d452bc17f0b1f568bcc1b1d01471fb5"
+  },
+  "_source": "git://github.com/btford/angular-phonegap-ready.git",
+  "_target": "~0.0.1",
+  "_originalSource": "angular-phonegap-ready"
+}

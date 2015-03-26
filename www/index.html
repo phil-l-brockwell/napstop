@@ -10,57 +10,71 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js">
+
+    </script>
+
   </head>
 
   <header>
     <br>
-    <center><b>Snoozy</b></center>
-<!--     <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" src="...">
-          </a>
-        </div>
-      </div>
-    </nav> -->
+    <center><b><i>Wake Me App</i></b></center>
   </header>
 
 <main class="container">
   <body class="body" ng-controller='NetherTestController'>
     <br>
-    <center>
-    <i>Don't miss your stop...</i>
-    </center>
-    <br>
-    <form role = "search">
-      <div class = "destination">
-        <div class="form-group col-lg-1">
-          <input class="form-control" type='text' ng-model='destination' placeholder='Enter Your Destination'>
-        </div>
+
+    <div ng-hide='distanceBetween < 1'>
+
+      <div ng-hide='sleeping'>
+        <center>
+        <i>Wake me when I'm close to...</i>
+        </center>
+        <br>
+
+        <form role = "search">
+          <div class = "destination">
+            <div class="form-group col-lg-1">
+              <input class="form-control" type='text' ng-model='destination' placeholder='Enter Your Destination'>
+            </div>
+          </div>
+        </form>
+
+        <center><button class="btn btn-success btn-lg" ng-click='sleep()'>Snooze!</button>
+        </center>
       </div>
-    </form>
 
+      <div ng-show='sleeping'>
+        <center>
+          <h4>Current Location</h4>
+          {{currentLocation}}
+
+          <h4>Destination</h4>
+          {{destLocation}}
+
+<!--           <h4>Distance To Your Stop</h4>
+          {{distanceBetween}} -->
+
+          <h4>Estimated Sleep Remaining</h4>
+          {{estimatedSleep}} minutes
+          <br><br>
+          <button class="btn btn-success btn-lg" ng-show='sleeping' ng-click='cancelSleep()'>Stop Snoozing</button>
+        </center>
+      </div>
+
+    </div>
+
+    <div ng-show='distanceBetween < 1'>
     <center>
-    <button class="btn btn-success btn-lg" ng-click='sleep()'>Take a Nap</button>
-
-    <h1>Current Location</h1>
-    Latitude = {{locCoords.lat}}
-    <br>
-    Longitude = {{locCoords.lon}}
-
-    <h1>Destination</h1>
-    Latitude = {{destCoords.lat}}
-    <br>
-    Longitude = {{destCoords.lon}}
-    </body>
-
-    <h1>Distance To Your Stop</h1>
-    {{distanceBetween}}
-    <h1 ng-show='distanceBetween < 1'>WAKE UP!</h1>
+      <h1>WAKE UP!</h1>
+      <button class="btn btn-danger btn-lg" ng-click='cancelSleep()' onclick="window.location.href='/'">I'm Awake, Thanks :)</button>
+    </div>
 
     </center>
-
   </body>
 </main>
+
+<footer></footer>
+
 </html>
