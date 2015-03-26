@@ -20,7 +20,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "org.apache.cordova.vibration": "0.3.13",
-    "org.apache.cordova.dialogs": "0.3.1-dev"
+    "org.apache.cordova.dialogs": "0.3.0"
 }
 // BOTTOM OF METADATA
 });

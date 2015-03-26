@@ -3,25 +3,24 @@ html, body {
 }
 
 .body {
-    background-color: rgba(30, 150, 255, 0.9);
+    background-image: url("http://www.ciberdix.com/wp-content/uploads/2014/01/space-iphone-wallpaper-5.jpg");
+    background-size: cover;
+    height: 100%
+    opacity: 0.3;
+    background-color: rgba(30, 150, 255, 0.5);
     color: white;
-
 }
-
 
 header {
     height: 50px;
-    background-color: rgba(255, 49, 47, 0.9);
-}
+    background-color: black;
 
-/*.sleep {
-  background-color: rgba(0, 0, 66, 0.9);
-}*/
+}
 
 footer {
   height: 40px;
   display: flex;
-  background-color: rgba(255, 49, 47, 0.9);
+  background-color: black;
   position: fixed;
   bottom: 0;
   width: 100%;
