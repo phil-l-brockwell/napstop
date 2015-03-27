@@ -9,74 +9,86 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
     <script src="app.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js">
     </script>
-
 
   </head>
 
   <header>
     <br>
-    <center><b><i>NapStop</i></b></center>
+    <center><b><i>Nap</b>Stop</i></center>
+
   </header>
 
 <main class="container">
   <body class="body" ng-controller='NetherTestController'>
     <br>
 
-    <div ng-hide='distanceBetween < 1'>
+    <div ng-hide='arrived'>
 
       <div ng-hide='sleeping'>
-        <center>
+        <!-- <center>
         <i>Make my Nap Stop before my Bus Stop</i>
-        </center>
+        </center> -->
         <br>
 
         <form role = "search">
           <div class = "destination">
             <div class="form-group col-lg-1">
-              <input class="form-control" type='text' ng-model='destination' placeholder='Enter Your Destination'>
+              <input id="search" class="form-control" type='text' ng-model='destination' placeholder='Wake me up close to...'>
             </div>
           </div>
         </form>
 
-        <center><button class="btn btn-success btn-lg" ng-click='sleep()'>Snooze!</button>
+        <center><button class="btn btn-success btn-lg" ng-click='sleep()'>Take a Nap!</button>
         </center>
       </div>
 
       <div ng-show='sleeping'>
         <center>
           <h4>Current Location</h4>
-          {{currentLocation}}
-          <br>
-          <br>
+          {{locCoords.area}}
+          <br><br>
           <h4>Destination</h4>
-          {{destLocation}}
-
-<!--           <h4>Distance To Your Stop</h4>
-          {{distanceBetween}} -->
-          <br>
-          <br>
+          {{destCoords.area}}
+          <br><br>
+          <h4>Distance To Your Stop</h4>
+          {{distanceBetween}} Kilometres
+          <br><br>
           <h4>Estimated Sleep Remaining</h4>
           {{estimatedSleep}} minutes
           <br><br>
-          <button class="btn btn-success btn-lg" ng-show='sleeping' ng-click='cancelSleep()'>Stop Snoozing</button>
+          <button class="btn btn-success btn-lg" ng-show='sleeping' ng-click='cancelSleep()'>Stop Napping</button>
         </center>
       </div>
 
     </div>
 
-    <div ng-show='distanceBetween < 1'>
+    <div ng-show='arrived'>
     <center>
       <h1>WAKE UP!</h1>
-      <button class="btn btn-danger btn-lg" ng-click='cancelSleep()' onclick="window.location.href='/'">I'm Awake, Thanks :)</button>
+      <button class="btn btn-danger btn-lg" ng-click='cancelSleep()' onclick="window.location.href='/'">I'm Awake, Thanks</button>
     </div>
 
     </center>
   </body>
 </main>
 
-<footer></footer>
+<footer>
+  <div ng-hide="sleeping">
+  <a href="#menu" id="toggle" ng-model="theToggle"><span></span></a>
+    <div id="menu">
+      <ul>
+        <li ng-repeat="location in savedLocations |limitTo:-3" ng-click="sleep(location)">
+          :: {{location.location}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
 </html>
