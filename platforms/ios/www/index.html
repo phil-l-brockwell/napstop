@@ -20,7 +20,7 @@
 
   <header>
     <br>
-    <center><b><i>NapStop</i></b></center>
+    <center><b><i>Nap</b>Stop</i></center>
 
   </header>
 
@@ -31,9 +31,9 @@
     <div ng-hide='arrived'>
 
       <div ng-hide='sleeping'>
-        <center>
+        <!-- <center>
         <i>Make my Nap Stop before my Bus Stop</i>
-        </center>
+        </center> -->
         <br>
 
         <form role = "search">
@@ -83,7 +83,7 @@
   <a href="#menu" id="toggle" ng-model="theToggle"><span></span></a>
     <div id="menu">
       <ul>
-        <li ng-repeat="location in savedLocation |limitTo:-3" ng-click="sleep(location)">
+        <li ng-repeat="location in savedLocations |limitTo:-3" ng-click="sleep(location)">
           :: {{location.location}}
         </li>
       </ul>

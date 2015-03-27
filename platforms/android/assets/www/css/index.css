@@ -80,7 +80,7 @@ footer {
 #menu {
   position: relative;
   margin: auto;
-  top: -170;
+  top: -190;
   content: "";
   display: block;
   border-left: 15px solid transparent;
@@ -91,7 +91,7 @@ footer {
   box-shadow: 0 1px 8px rgba(0,0,0,0.05);
   /* just for this demo */
   opacity: 0;
-  transition: opacity .4s;
+  transition: opacity .6s;
 }
 
 #menu:after {
