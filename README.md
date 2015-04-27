@@ -38,6 +38,7 @@ We then used the Phonegap/Cordova service to serve the app to mobile devices. We
 We created two videos to promote our app, they can be viewed at the following URLs:
 
 [Technical Explanation](https://www.youtube.com/watch?v=rC8bOD7lQbo)
+
 [Advert](https://www.youtube.com/watch?v=MuQi8JT5IaY)
 
 # Future Enhancements
