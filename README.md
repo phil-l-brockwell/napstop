@@ -11,10 +11,10 @@ A project worked on for Makers Academy Makerthon. Our task was to create a mobil
 
 # The Team
 
-* Phil Brockwell (Thats me) https://github.com/robertpulson
-* Louise Beh: https://github.com/louisebeh
-* Costas Sarris: https://github.com/costassarris
-* Joe Newman: https://github.com/jjnewman
+* Phil Brockwell (Thats me) [Profile](https://github.com/robertpulson)
+* Louise Beh: [Profile](https://github.com/louisebeh)
+* Costas Sarris: [Profile](https://github.com/costassarris)
+* Joe Newman: [Profile](https://github.com/jjnewman)
 
 Between us we delivered a product that contained all the key functionality. We built the app using HTML/CSS and Jquery/Angular.
 We then used the Phonegap/Cordova service to serve the app to mobile devices. We were also able to deploy the app via xCode, however it has not been fully deployed to the mobile app store, yet.
@@ -37,8 +37,8 @@ We then used the Phonegap/Cordova service to serve the app to mobile devices. We
 
 We created two videos to promote our app, they can be viewed at the following URLs:
 
-* https://www.youtube.com/watch?v=MuQi8JT5IaY
-* https://www.youtube.com/watch?v=rC8bOD7lQbo
+[Technical Explanation](https://www.youtube.com/watch?v=rC8bOD7lQbo)
+[Advert](https://www.youtube.com/watch?v=MuQi8JT5IaY)
 
 # Future Enhancements
 
