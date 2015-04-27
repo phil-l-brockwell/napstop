@@ -37,7 +37,6 @@ netherTest.controller('NetherTestController', function($scope, $resource, $inter
   var autocomplete = new google.maps.places.Autocomplete(input);
   var geocoder = new google.maps.Geocoder();
 
-
   function updateLocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
     getDistanceBetween($scope.locCoords.lat, $scope.locCoords.lon, $scope.destCoords.lat, $scope.destCoords.lon);
@@ -159,31 +158,5 @@ theToggle.onclick = function() {
    toggleClass(this, 'on');
    return false;
 }
-
-    // $scope.alert = function() {
-    //   navigator.notification.vibrate(2500);
-    // }
-
-    // Show a custom alert
-    //
-    // $scope.showAlert = function showAlert() {
-    //     navigator.notification.alert(
-    //         'You are the winner!',  // message
-    //         'Game Over',            // title
-    //         'Done'                  // buttonName
-    //     );
-    // }
-
-    // // Beep three times
-    // //
-    // $scope.playBeep = function playBeep() {
-    //     navigator.notification.beep(3);
-    // }
-
-    // // Vibrate for 2 seconds
-    // //
-    // $scope.vibrate =function vibrate() {
-    //       navigator.notification.vibrate(2500);
-    // }
 
 });

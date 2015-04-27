@@ -25,8 +25,7 @@ netherTest.controller('NetherTestController', function($scope, $resource, $inter
  $scope.savedLocations = savedLocations || [];
  $scope.$watch('savedLocations', function() { localStorageService.set('savedLocations', $scope.savedLocations); }, true);
 
-
- var averageSpeed = 15; var refreshInterval = 5000; var proximity = 1;
+ var averageSpeed = 15; var refreshInterval = 5000; var proximity = 0.7;
  var defaultLocation = { location: 'loading', lon: 0, lat: 0, area: 'loading'};
 
  var input = document.getElementById('search');
@@ -69,8 +68,8 @@ netherTest.controller('NetherTestController', function($scope, $resource, $inter
  };
 
  function saveLocation(newLocation) {
-   $scope.savedLocations.push(newLocation);
    if ($scope.savedLocations.length > 3) $scope.savedLocations.shift();
+   $scope.savedLocations.push(newLocation);
  };
 
  $scope.cancelSleep = function() {
@@ -96,7 +95,10 @@ netherTest.controller('NetherTestController', function($scope, $resource, $inter
  };
 
  function checkArrived() {
-   if ($scope.distanceBetween < proximity) { $scope.arrived = true; alertPhone(); };
+   if ($scope.distanceBetween < proximity) { 
+      $scope.arrived = true; 
+      alertPhone(); 
+  };
  };
 
  function alertPhone() {
@@ -155,31 +157,5 @@ theToggle.onclick = function() {
    toggleClass(this, 'on');
    return false;
 }
-
-    // $scope.alert = function() {
-    //   navigator.notification.vibrate(2500);
-    // }
-
-    // Show a custom alert
-    //
-    // $scope.showAlert = function showAlert() {
-    //     navigator.notification.alert(
-    //         'You are the winner!',  // message
-    //         'Game Over',            // title
-    //         'Done'                  // buttonName
-    //     );
-    // }
-
-    // // Beep three times
-    // //
-    // $scope.playBeep = function playBeep() {
-    //     navigator.notification.beep(3);
-    // }
-
-    // // Vibrate for 2 seconds
-    // //
-    // $scope.vibrate =function vibrate() {
-    //       navigator.notification.vibrate(2500);
-    // }
 
 });

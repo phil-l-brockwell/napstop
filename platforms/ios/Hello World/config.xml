@@ -20,6 +20,9 @@
     <feature name="Notification">
         <param name="ios-package" value="CDVNotification" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <name>Hello World</name>
     <description>
         Hello World sample application that responds to the deviceready event.

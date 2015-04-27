@@ -10,5 +10,11 @@
             "type": "registry",
             "id": "org.apache.cordova.dialogs"
         }
+    },
+    "org.apache.cordova.geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.geolocation"
+        }
     }
 }
