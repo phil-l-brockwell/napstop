@@ -1,6 +1,6 @@
 # napstop
 
-A project worked on for Makers Academy Makerthon
+A project worked on for Makers Academy Makerthon. Our task was to create a mobile app that could be initialised with a destination and would alert a user once they reached a certain proximity of that destination.
 
 # Key Learning Areas
 
@@ -33,7 +33,7 @@ We then used the Phonegap/Cordova service to serve the app to mobile devices. We
 ![ScreenShot](https://github.com/robertpulson/napstop/blob/master/screenshots/IMG_3802.PNG?raw=true)
 ![ScreenShot](https://github.com/robertpulson/napstop/blob/master/screenshots/IMG_3803.PNG?raw=true)
 
-# Video
+# Videos
 
 We created two videos to promote our app, they can be viewed at the following URLs:
 
@@ -57,7 +57,11 @@ Navigate into it:
 
 `cd napstop`
 
-Install Phonegap:
+Use homebrew to install node (if not installed):
+
+`brew install node`
+
+Then install Phonegap:
 
 `$ sudo npm install -g phonegap`
 
