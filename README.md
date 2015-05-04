@@ -69,3 +69,9 @@ Then install Phonegap:
 Run `phonegap serve` to run the program over the wireless network.
 
 You can now view the app in your browser by pasting in the port address, or you can download the phonegap app on your mobile and enter the port address to view the app on your phone.
+
+If you have xCode installed you can deploy the app to your phone by using:
+
+`cordova build ios`
+
+And then opening the `.xcodeproj` file inside `platforms -> ios`. If you connect a suitable device you can download the app to it, with full functionality, however an Apple Developers License is required for this.
