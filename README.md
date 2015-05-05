@@ -11,7 +11,7 @@ A project worked on for Makers Academy Makerthon. Our task was to create a mobil
 
 # The Team
 
-* Phil Brockwell (Thats me) [Profile](https://github.com/robertpulson)
+* Phil Brockwell (Thats me)
 * Louise Beh: [Profile](https://github.com/louisebeh)
 * Costas Sarris: [Profile](https://github.com/costassarris)
 * Joe Newman: [Profile](https://github.com/jjnewman)
