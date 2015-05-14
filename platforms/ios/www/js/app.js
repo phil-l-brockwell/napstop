@@ -80,11 +80,11 @@ netherTest.controller('NetherTestController', function($scope, $resource, $inter
    $scope.estimatedSleep = Math.round(60 * $scope.distanceBetween / averageSpeed);
  };
 
- function checkArrived() {
+function checkArrived() {
    if ($scope.distanceBetween < proximity) { 
       $scope.arrived = true; 
       alertPhone(); 
-  };
+    };
  };
 
  function alertPhone() {
