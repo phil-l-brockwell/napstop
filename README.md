@@ -64,7 +64,7 @@ Use homebrew to install node (if not installed):
 
 Then install Phonegap:
 
-`$ sudo npm install -g phonegap`
+`npm install -g phonegap`
 
 Run `phonegap serve` to run the program over the wireless network.
 
